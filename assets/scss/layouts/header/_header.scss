@@ -50,9 +50,8 @@
   }
 
   @include breakpoint("medium") {
-    margin: 0;
+    margin: 0 auto (spacing("half"));
     // margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
-    padding: 0;
 
     .header.fixed & {
       background-color: color("greys", "lightest");
@@ -168,11 +167,21 @@
 
 .header-logo-image {
   @include lazy-loaded-img;
-  max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
-
+  max-height: remCalc($header-height) - $header-logo-marginVertical;
+  &.desktop {
+    display: none;
+  }
   @include breakpoint("medium") {
     max-height: none;
+    &.desktop {
+      display: block;
+    }
+    &.mobile {
+      display: none;
+      
+    }
   }
+  
 }
 
 .header-logo-image-unknown-size {
