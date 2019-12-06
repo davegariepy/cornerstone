@@ -40,7 +40,7 @@
 
 .header-logo {
   font-size: 0; // 1
-  margin: 0 remCalc($header-toggle-width); // 2
+  margin: 0 ; //remCalc($header-toggle-width); // 2
   text-align: center;
 
   @include breakpoint("small") {
