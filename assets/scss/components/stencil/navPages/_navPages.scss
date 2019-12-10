@@ -48,7 +48,8 @@
     z-index: zIndex("lower");
 
     @include breakpoint("medium") {
-        background: transparent;
+        // background: transparent;
+        background-color: $navPages-backgroundColor;
         display: block;
         height: auto;
         padding: 0;
@@ -67,7 +68,7 @@
 // -----------------------------------------------------------------------------
 
 .navPages {
-    background-color: $navPages-backgroundColor;
+    // background-color: $navPages-backgroundColor;
     height: 100%;
     overflow-y: auto;
     padding: spacing("single");
@@ -75,7 +76,7 @@
     @include breakpoint("medium") {
         @include grid-row(); // 1
         @include nav($style: "navBar", $wrapper: "nav");
-        background: none;
+        // background: none;
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
@@ -187,6 +188,7 @@
 
 .navPages-action {
     color: stencilColor("navPages-color");
+    
     display: block;
     font-size: fontSize("smaller");
     font-weight: fontWeight("bold");
@@ -195,6 +197,7 @@
     text-transform: uppercase;
 
     @include breakpoint("medium") {
+        color: white;
         display: inline-block;
         padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
 
@@ -210,7 +213,12 @@
     }
 
     &:hover, &.activePage {
-        color: stencilColor("navPages-color-hover");
+        @include breakpoint("medium") {
+            color: white;
+            background-color: red;
+            border: 1px solid white;
+        }
+        // color: stencilColor("navPages-color-hover");
 
         // scss-lint:disable NestingDepth
         svg {
