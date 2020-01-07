@@ -178,12 +178,17 @@ export default class Cart extends PageManager {
     refreshContent(remove) {
         const $cartItemsRows = $('[data-item-row]', this.$cartContent);
         const $cartPageTitle = $('[data-cart-page-title]');
+        const $cartMinimumQuantity = $('[data-cart-minimum-quantity]');
+        const $cartMinimumCheckoutButton = $('[data-cart-minimum-checkout-button]');
+        
         const options = {
             template: {
                 content: 'cart/content',
                 totals: 'cart/totals',
                 pageTitle: 'cart/page-title',
                 statusMessages: 'cart/status-messages',
+                minimumQuantity: 'cart/minimum-quantity',
+                checkoutButton: 'cart/checkout-button',
             },
         };
 
@@ -200,6 +205,9 @@ export default class Cart extends PageManager {
             this.$cartMessages.html(response.statusMessages);
 
             $cartPageTitle.replaceWith(response.pageTitle);
+            $cartMinimumQuantity.replaceWith(response.minimumQuantity);
+            $cartMinimumCheckoutButton.replaceWith(response.checkoutButton);
+
             this.bindEvents();
             this.$overlay.hide();
 

@@ -1,0 +1,5 @@
+<div data-cart-minimum-checkout-button>
+    {{#if cart.quantity ">" 4}}
+    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
+    {{/if}}
+</div>

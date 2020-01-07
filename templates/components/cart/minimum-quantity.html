@@ -1,0 +1,5 @@
+<div data-cart-minimum-quantity>
+    {{#if cart.quantity "<" 5}}
+        <h3 class="page-heading">We have a 5 item minimum, please add {{subtract 5 cart.quantity}} more to checkout.</h3>
+    {{/if}}
+</div>
