@@ -216,7 +216,8 @@
         @include breakpoint("medium") {
             color: white;
             background-color: red;
-            border: 1px solid white;
+            // border-left: 1px solid white;
+            // border-right: 1px solid white;
         }
         // color: stencilColor("navPages-color-hover");
 
